@@ -1,0 +1,5 @@
+# Human Anomaly Detection
+
+# Abstract
+
+The use of unmanned aerial vehicles (UAVs) for surveillance, such as for detection of real time anomalies are attracting much interest. Recent advancements in avionics and electronics systems led to the increased use of Unmanned Aerial Vehicles (UAVs) in several military and civilian missions. One of the main advantages that makes UAVs attractive is their ability to reach remote regions that are inaccessible to human operators, i.e. provide a new aerial perspective in visual surveillance. Autonomous visual surveillance systems require real time anomalies detection. However, there are many difficulties associated with automatic anomalies detection by an UAV, as there is a lack in the proposed contributions describing abnormal events detection in videos recorded by a drone. In this paper, we propose an anomaly detection approach in a surveillance mission where videos are acquired by an UAV.
