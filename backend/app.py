@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import sys
 import tensorflow as tf
+from tensorflow.python.saved_model import tag_constants 
 
 __author__ = 'Rajesh'
 __source__ = ''
@@ -10,7 +11,8 @@ __source__ = ''
 app = Flask(__name__)
 UPLOAD_FOLDER = "C:/Users/91895/Downloads/human_anomaly_detection/temp"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
-model = tf.keras.models.load_model('C:/Users/91895/Downloads/human_anomaly_detection/saved_model')
+model = tf.saved_model.load('C:/Users/91895/Downloads/human_anomaly_detection/saved_model', tags=[tag_constants.SERVING])
+infer = model.signatures['serving_default']
 
 @app.route("/")
 def index():
@@ -31,7 +33,10 @@ def upload_file():
       filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
       print(filepath)
       f.save(filepath)
+      print(model)
+      print(model.predict)
       prediction = model.predict(filepath)
+      print(prediction)
       os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       return prediction
       # return render_template("uploaded.html", display_detection = filename, fname = filename)      
