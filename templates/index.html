@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles/mainpage.css') }}"
+    />
+    <title>Human Anomalies Detection</title>
+  </head>
+  <body>
+    <p class="title">Human Anomalies Detection</p>
+    <div class="section">
+      <video id="cam" autoplay controls>Not available</video>
+      <video id="video" class="hidden" autoplay controls>Not available</video>
+      <img src="" id="output" />
+      <div class="sub-section">
+        <img src="../static/images/icons8-camera-64.png" id="switchBtn" />
+        <div class="upload-form">
+          <input id="file-input" type="file" name="file" />
+          <img src="../static/images/icons8-upload-64.png" id="upload" />
+          <img src="../static/images/icons8-play-64.png" id="play" />
+          <input type="submit" id="submit" />
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static',filename='scripts/index.js') }}"></script>
+  </body>
+</html>
